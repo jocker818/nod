@@ -338,17 +338,23 @@ section {
     margin-bottom: 0.5rem;
 }
 
-/* Style pour les photos du bureau */
+/* Style pour les photos du bureau - CORRIGÉ */
 .team-card .card-img {
     border-radius: 50%;  /* Pour des photos rondes */
     width: 200px;
     height: 200px;
     margin: 0 auto;
     border: 4px solid var(--primary-color);
+    object-fit: cover;  /* Assure que l'image remplit bien le cercle */
+    background-position: center top;  /* Privilégie l'affichage du haut de l'image (tête) */
 }
 
+/* Assurez-vous que le conteneur est bien dimensionné */
 .team-card {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .team-card h3 {
@@ -592,6 +598,18 @@ section {
     .tools-grid {
         grid-template-columns: repeat(4, 1fr);
     }
+    
+    /* Amélioration pour l'affichage mobile du slideshow */
+    .hero {
+        min-height: 60vh; /* Hauteur réduite pour mobile */
+    }
+    
+    .slide {
+        background-size: cover;
+        background-position: center center;
+        height: 100%;
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -619,5 +637,17 @@ section {
     .program-tab {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
+    }
+    
+    /* Ajustements spécifiques pour très petits écrans - diaporama */
+    .hero {
+        min-height: 50vh;
+    }
+    
+    .slide {
+        /* Force la taille pour qu'elle couvre toute la zone */
+        background-size: 100% 100%;
+        /* Alternative si l'approche ci-dessus ne fonctionne pas bien */
+        /* background-size: cover; */
     }
 }
