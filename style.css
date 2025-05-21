@@ -639,15 +639,6 @@ section {
         font-size: 0.9rem;
     }
     
-    /* Ajustements spécifiques pour très petits écrans - diaporama */
-    .hero {
-        min-height: 50vh;
-    }
     
-    .slide {
-        /* Force la taille pour qu'elle couvre toute la zone */
-        background-size: 100% 100%;
-        /* Alternative si l'approche ci-dessus ne fonctionne pas bien */
-        /* background-size: cover; */
-    }
+    
 }
